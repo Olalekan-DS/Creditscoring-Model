@@ -1,0 +1,24 @@
+#Content
+#It is almost impossible to understand the original dataset due to its complicated system of categories and symbols. 
+#Thus, I wrote a small Python script to convert it into a readable CSV file. Several columns are simply ignored, 
+#because in my opinion either they are not important or their descriptions are obscure. The selected attributes are:
+
+loan_id, partner_name, days_late, call_contact_status, comment, type, risk, balance_remaining, amount_already_paid
+amount_disbursed, num_of_loaninstalled, num_of_ptp_scheduled, loan_status (Value target - Good or Bad Risk)
+
+#Recommended but not available
+Age (numeric)- null
+Sex (text: male, female) - null
+Job (numeric) - null
+Housing (text: own, rent, or free) - null
+Saving accounts (text - little, moderate, quite rich, rich) - null
+Purpose(text: furnitiure, rent, etc) - null
+risk (text: Good, bad)
+
+#Deployment with Flask-aws
+1. Spin up an EC2 server 
+2. Configure EC2 with security group and private key
+3. Install library and dependency on the EC2 server
+4. Move trained model and api.py flask file to EC2 server
+5. Configure flaskapp.wsgi and apache vhost file
+6. Restart apache webserver and check API status
